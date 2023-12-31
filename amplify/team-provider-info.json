@@ -1,0 +1,25 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-inspirecoding-dev-200109-authRole",
+      "UnauthRoleArn": "arn:aws:iam::371990982144:role/amplify-inspirecoding-dev-200109-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::371990982144:role/amplify-inspirecoding-dev-200109-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-inspirecoding-dev-200109-deployment",
+      "UnauthRoleName": "amplify-inspirecoding-dev-200109-unauthRole",
+      "StackName": "amplify-inspirecoding-dev-200109",
+      "StackId": "arn:aws:cloudformation:us-east-1:371990982144:stack/amplify-inspirecoding-dev-200109/193853a0-a778-11ee-82f4-0a2dd4bc7b87",
+      "AmplifyAppId": "d8svtzky35zwp"
+    },
+    "categories": {
+      "auth": {
+        "inspirecoding1a2a4e04": {
+          "userPoolId": "us-east-1_dDEb0GYTD",
+          "userPoolName": "amplify_backend_manager_d1jh066o6l47ji",
+          "webClientId": "65tv058kdce3tkdld5f8sckrkm",
+          "nativeClientId": "65tv058kdce3tkdld5f8sckrkm"
+        }
+      }
+    }
+  }
+}
