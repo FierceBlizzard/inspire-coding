@@ -10,6 +10,11 @@
       "StackName": "amplify-inspirecoding-staging-211606",
       "StackId": "arn:aws:cloudformation:us-east-1:371990982144:stack/amplify-inspirecoding-staging-211606/c82c29a0-bfb4-11ee-b414-1241f141b62b",
       "AmplifyAppId": "d2zgsdp7bb95pj"
+    },
+    "categories": {
+      "auth": {
+        "inspirecodingb298204f": {}
+      }
     }
   }
 }
