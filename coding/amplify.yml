@@ -6,6 +6,7 @@ frontend:
         - cd coding  # Change directory into the coding folder
         - npm ci
         - npm run build
+        - cd build
   artifacts:
     baseDirectory: build
     files:
