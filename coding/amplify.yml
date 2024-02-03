@@ -3,6 +3,7 @@ frontend:
   phases:
     build:
       commands:
+        - cd coding  # Change directory into the coding folder
         - npm ci
         - npm run build
   artifacts:
