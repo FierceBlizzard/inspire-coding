@@ -1,27 +1,30 @@
-import { signUp } from 'aws-amplify/auth';
 import React, { useRef } from 'react';
+import { signUp } from 'aws-amplify/auth';
+import { useNavigate } from 'react-router-dom';
 
 async function handleSignUp({email, username, password}){
     try{
-        const {isSignUpComplete, userId, nextStep} = await signUp({
+        const {isSignUpComplete, userId, nextStep} = {username, password, userId} = await signUp({
             username,
             password,
             options: {
-                email
-            },
-            autoSignIn: true
+                userAttributes:{
+                    email
+                }
+            }
         });
-        console.log(username);
     }catch(error){
         console.log("error singing up: ", error);
     }
 }
+
 
 function SignUpForm(){
     
     const emailRef = useRef(null);
     const usernameRef = useRef(null);
     const passwordRef = useRef(null);
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
@@ -29,8 +32,9 @@ function SignUpForm(){
             const email = emailRef.current.value;
             const username = usernameRef.current.value;
             const password = passwordRef.current.value;
-            console.log(`${email}, ${username}`);
+
             await handleSignUp({email, username, password});
+            navigate('/home');
         }catch(error){
             console.log("error signing up: ", error);
         }
@@ -39,6 +43,7 @@ function SignUpForm(){
     
     return(
     <div>
+        <h1>Sign Up Form</h1>
         <form id="sign-up" onSubmit={handleSubmit}>
             <label>Email: </label>
             <input type="email" ref={emailRef}></input>

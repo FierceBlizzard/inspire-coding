@@ -3,6 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Amplify } from 'aws-amplify';
+
+
+Amplify.configure({
+  Auth: {
+    Cognito: {
+      userPoolClientId: '5p7tch2rcto8n8l5a65t7dsvl3',
+      userPoolId: 'us-east-1_FassoH5X9',
+      username: 'true'
+    }
+  }
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
