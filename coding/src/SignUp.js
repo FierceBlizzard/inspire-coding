@@ -4,12 +4,13 @@ import { useNavigate } from 'react-router-dom';
 
 async function handleSignUp({email, username, password}){
     try{
-        const {isSignUpComplete, userId, nextStep} = {username, password, userId} = await signUp({
+        const {isSignUpComplete, nextStep} = {username, password} = await signUp({
             username,
             password,
             options: {
                 userAttributes:{
-                    email
+                    email,
+                    username
                 }
             }
         });
@@ -34,6 +35,7 @@ function SignUpForm(){
             const password = passwordRef.current.value;
 
             await handleSignUp({email, username, password});
+            console.log(username);
             navigate('/home');
         }catch(error){
             console.log("error signing up: ", error);

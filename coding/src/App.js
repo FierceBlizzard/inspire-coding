@@ -5,6 +5,18 @@ import HomePage from './Home';
 import SignUpForm from './SignUp';
 import LoginForm from './login';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { Amplify } from 'aws-amplify';
+
+
+Amplify.configure({
+  Auth: {
+    Cognito: {
+      userPoolClientId: '5p7tch2rcto8n8l5a65t7dsvl3',
+      userPoolId: 'us-east-1_FassoH5X9',
+      username: 'true'
+    }
+  }
+});
 
 function App() {
   return (
