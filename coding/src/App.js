@@ -1,22 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
 import React from 'react';
+import { Authenticator } from '@aws-amplify/ui-react';
 import HomePage from './Home';
-import SignUpForm from './SignUp';
-import LoginForm from './login';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import '@aws-amplify/ui-react/styles.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-        <Router>
+        <Authenticator initialAuthState="signIn">
+          <Router>
             <Routes>
-                <Route path="/home" element={<HomePage />} />
-                <Route path="/login" element={<LoginForm />} />
-                <Route path="/" element={<Navigate to="/login" />} />
-                <Route path="/SignUp" element={<SignUpForm />} />
+              <Route path="/home" element={<HomePage />} />
             </Routes>
-        </Router>
+          </Router>
+        </Authenticator>
     </div>
   );
 }

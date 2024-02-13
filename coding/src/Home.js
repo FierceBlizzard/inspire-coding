@@ -1,6 +1,5 @@
 import React from 'react';
 import { signOut } from 'aws-amplify/auth';
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { getCurrentUser } from 'aws-amplify/auth';
 
@@ -23,10 +22,12 @@ async function currentUser(){
 
 function HomePage(){
     let user = currentUser();
+    console.log(user);
     
     return(
         <div>
             <h1>Welcome Let's Inspire Coders</h1>
+            <Button onClick={logout()}>LogOut</Button>
         </div>
     );
 }
